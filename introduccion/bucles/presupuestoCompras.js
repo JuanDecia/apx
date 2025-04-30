@@ -70,3 +70,45 @@ while (indiceLoop < carrito.length) {
 }
 
 console.log("Con $" + montoDisponible + " puedes comprar:", comprables);
+
+console.log("-----------------");
+
+// ####### FOR #######
+// Resolución con FOR
+
+const comprablesFor = [];
+let nuevoTotalPreliminarFor = 0;
+
+for ( let i = 0; i < carrito.length; i++ ) {
+  const producto = carrito[i];
+  const precioTotalItem = producto.precio * producto.cantidad;
+  
+  if ( nuevoTotalPreliminarFor + precioTotalItem <= montoDisponible ) {
+    comprablesFor.push(producto);
+  }
+  
+  nuevoTotalPreliminarFor += precioTotalItem;
+  
+}
+
+console.log("Con $" + montoDisponible + " puedes comprar:", comprablesFor);
+
+console.log("-----------------");
+
+// ####### FOR OF #######
+// Resolución con FOR OF
+
+const comprobablesForOf = [];
+let nuevoTotalPreliminarForOf = 0;
+
+for ( const producto of carrito ) {
+  const precioTotalItem = producto.precio * producto.cantidad;
+
+  if ( nuevoTotalPreliminarForOf + precioTotalItem <= montoDisponible ) {
+    comprobablesForOf.push(producto);
+  }
+
+  nuevoTotalPreliminarForOf += precioTotalItem;
+}
+
+console.log("Con $" + montoDisponible + " puedes comprar:", comprobablesForOf);

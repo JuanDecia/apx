@@ -53,13 +53,29 @@ for ( let i = 0; i < numerosFor.length; i++ ) {
     }
 }
 
-console.log((`Los numeros pares son: ${arregloParesFor.join(",")}. En total hay ${contadorParFor}.`));
+console.log((`Los numeros pares son: ${arregloParesFor.join(", ")}. En total hay ${contadorParFor}.`));
 
 console.log("--------------------------------------------------");
 
 // ######## FOR OF #######
 
+const numerosForOf = [3, 17, 25, 8, 42, 11, 90, 7, 56, 23, 65, 14, 78, 39, 99];
+let arregloParesForOf = [];
+let contadorParForOf = 0;
+
 // Recorrer el array
-for (const num of numeros) {
- // Tu lógica
+for (const num of numerosForOf) {
+  
+    // Verificar si es par
+    if ( num % 2 === 0 ) {
+
+        // Si es par, se guarda en el arreglo y aumenta el contador
+        arregloParesForOf.push(num);
+        contadorParForOf++;
+    }
 }
+
+
+console.log((`Los numeros pares son: ${arregloParesForOf.join(", ")}. En total hay ${contadorParForOf}.`));
+
+console.log("--------------------------------------------------");

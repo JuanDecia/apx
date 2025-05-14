@@ -122,22 +122,85 @@ let promedioForOf = sumaTotalForOf / contadorForOf;
 
 // ------- RESULTADOS POR HORA -------
 
+console.log("");
+
+
 console.log("####### RESULTADOS POR HORA:");
 console.log("Promedio cada hora while:", promedioWhile);
 console.log("Promedio cada hora for:", promedioFor);
 console.log("Promedio cada hora for of:", promedioForOf);
 
+console.log("");
+console.log("#########################################");
+console.log("");
 
 
-// let sumaTotal2 = 0;
-// let contador2 = 0;
 
-// // Recorrer de a 2 posiciones (cada 2 horas)
-// for (let i = 0; i < temperaturaPorHora.length; i += 2) {
-//   // [Tu lógica]
-// }
-// let promedio2 = sumaTotal2 / contador2;
-// console.log("Promedio cada 2 horas:", promedio2);
+// ####### 2 HORAS #######
+// ------- WHILE -------
 
-// // Recorrer de a 3 posiciones (cada 3 horas)
-// // [Tu lógica]
+let sumatotalWhile2 = 0;
+let contadorWhile2 = 0;
+
+let IteradorWhile2 = 0;
+while ( IteradorWhile2 < temperaturaPorHora.length ) {
+  sumatotalWhile2 += temperaturaPorHora[IteradorWhile2].temperatura;
+  contadorWhile2++;
+  IteradorWhile2 += 2;
+}
+
+let promedioWhile2 = sumatotalWhile2 / contadorWhile2;
+
+// ------- FOR -------
+
+let sumaTotalFor2 = 0;
+let contadorFor2 = 0;
+
+for (let i = 0; i < temperaturaPorHora.length; i += 2) {
+  
+  sumaTotalFor2 += temperaturaPorHora[i].temperatura;
+  contadorFor2 ++;
+}
+
+let promedioFor2 = sumaTotalFor2 / contadorFor2;
+
+// ------- RESULTADOS POR HORA (dos posiciones) -------
+console.log("RESULTADOS CADA DOS HORAS:");
+
+console.log("Promedio cada 2 horas while:", promedioWhile2);
+console.log("Promedio cada 2 horas for:", promedioFor2);
+
+console.log("");
+console.log("#########################################");
+console.log("");
+
+// ####### TRES HORAS #######
+// ------- WHILE -------
+
+let sumatotalWhile3 = 0;
+let contadorWhile3 = 0;
+
+let iteradorWhile3 = 0;
+while ( iteradorWhile3 < temperaturaPorHora.length ) {
+  sumatotalWhile3 += temperaturaPorHora[iteradorWhile3].temperatura;
+  contadorWhile3++;
+  iteradorWhile3+=3;
+}
+
+let promedioWhile3 = sumatotalWhile3 / contadorWhile3;
+
+// ------- FOR -------
+
+let sumatotalFor3 = 0;
+let contadorFor3 = 0;
+
+for ( let i = 0; i < temperaturaPorHora.length; i+=3 ) {
+  sumatotalFor3 += temperaturaPorHora[i].temperatura;
+  contadorFor3++;
+}
+
+let promedioFor3 = sumatotalFor3 / contadorFor3;
+
+console.log("RESULTADOS CADA 3 HORAS");
+console.log("Promedio cada 3 horas while:", promedioWhile3);
+console.log("Promedio cada 3 horas for:", promedioFor3);

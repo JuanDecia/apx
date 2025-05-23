@@ -12,7 +12,7 @@ const arregloAleatorio = () => {
   const arregloACompletar = [];
 
   for (i = 0; i < 40; i++) {
-    const numeroAleatorio = Math.floor(Math.random() * 100)
+    const numeroAleatorio = Math.floor(Math.random() * 100);
 
     arregloACompletar.push(numeroAleatorio);
   }
@@ -23,18 +23,26 @@ const arregloAleatorio = () => {
 // Variable que contiene el arreglo completo.
 const arregloNumeros = arregloAleatorio();
 
-function ordernarElArray(arrayOriginal){
-  
-    const arrayOrdenado = [...arrayOriginal];
+function ordernarElArray(arrayOriginal) {
+  const arrayOrdenado = [...arrayOriginal];
 
-    
+  for (let i = 0; i < arrayOrdenado.length; i++) {
+    for (let j = 0; j < arrayOrdenado.length - 1; j++) {
+      if (arrayOrdenado[j] > arrayOrdenado [j + 1]) {
+        // Intercambiar los elementos
+        const temp = arrayOrdenado[j];
+        arrayOrdenado[j] = arrayOrdenado[j + 1];
+        arrayOrdenado[j + 1] = temp;
+      }
+    }
+  }
 
   return arrayOrdenado;
 }
 
 const main = () => {
-  
+  console.log("Arreglo original: ", arregloNumeros);
+  console.log("Arreglo ordenado:", ordernarElArray(arregloNumeros));
 };
 
 main();
-

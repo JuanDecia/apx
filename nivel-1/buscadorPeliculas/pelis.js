@@ -1,19 +1,8 @@
-/*
-    Módulo para procesar películas desde un archivo JSON.
-    Funciones para obtener, ordenar, buscar y filtrar películas.
-*/
-
-// Importar módulo 'fs' para manejar archivos con node
+// Recibir y procesar pelis de pelis.json
 const fs = require('fs');
-
-// Cargar el archivo JSON que contiene las películas
-// '__dirname' es una variable que contiene la ruta del directorio actual
 const pelis = JSON.parse(fs.readFileSync(__dirname + '/pelis.json', 'utf-8'));
 
-/*
-    Obtener todas las películas
-    @return - devuelve el array de peliculas del JSON como objeto
-*/
+// Función para obtener todas las películas
 const getPelis = () => {
     return pelis;
 };
@@ -25,17 +14,12 @@ const getPelis = () => {
     Ejemplo de uso: sortPelis('title') o sortPelis('year')
 */
 const sortPelis = (property) => {
-
-    // Verifica si la propiedad existe en al menos una película
-    // Si la condición es falsa, devuelve un mensaje y retorna un array vacío
+    // Verificamos si la propiedad existe en al menos una película
     if (!pelis.some(peli => property in peli)) {
         console.error(`La propiedad "${property}" no existe en las películas.`);
-        return [];
+        return []; // Retornamos un array vacío en caso de error
     }
-    
-    // Luego de verificar la propiedad, si no está vacía las compara y ordena.
-    // Retorna el array ordenado por la propiedad indicada.
-    // Si son iguales, retorna 0, no cambia el orden.
+
     return pelis.sort((a, b) => {
         if (a[property] < b[property]) return -1;
         if (a[property] > b[property]) return 1;

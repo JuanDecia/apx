@@ -64,8 +64,8 @@ const main = () => {
     // Si el argumento es '--tag' y tiene una propiedad
     // --tag thriller
     } else if (args[0] === '--tag' && args[1]) {
-        const tagPelis = tagPelis(args[1]);
-        console.table(tagPelis);
+        const pelisFiltradasPorTag = tagPelis(args[1]);
+        console.table(pelisFiltradasPorTag);
     // Si el argumento no es válido
     } else {
         console.error('Parámetros no válidos. Usa --sort, --search o --tag.');

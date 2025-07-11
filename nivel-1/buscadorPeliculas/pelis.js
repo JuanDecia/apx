@@ -20,7 +20,7 @@ const sortPelis = (property) => {
         return []; // Retornamos un array vacío en caso de error
     }
 
-    return pelis.sort((a, b) => {
+    return [...pelis].sort((a, b) => {
         if (a[property] < b[property]) return -1;
         if (a[property] > b[property]) return 1;
         return 0;
